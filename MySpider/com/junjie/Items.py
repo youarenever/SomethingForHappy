@@ -30,10 +30,12 @@ class DataRule(object):
     def __init__(self):
         pass
 
-    def get_endpage(self, html):
+    @staticmethod
+    def get_endpage(html):
         try:
             endre = re.compile("下一页")
             endpage = re.findall(endre, html)
+            # print endpage
             if unicode(endpage[0], "utf-8")==u"下一页":
                 return 1
             # ht = BeautifulSoup(html, "lxml")
@@ -42,11 +44,17 @@ class DataRule(object):
             print e
             return 0
 
+    def get_name(self):
+        pass
+
+    def get_image(self):
+        pass
+
+
 if __name__ == '__main__':
-    html = HttpConstructor.get_response("http://www.gamersky.com/wenku/201703/883627_14.shtml")
+    html = HttpConstructor.get_response("http://www.gamersky.com/ent/201703/886782_2.shtml")
     # print html
-    t = DataRule()
-    aa = t.get_endpage(html)
+    aa = DataRule.get_endpage(html)
     print aa
 
     # print
