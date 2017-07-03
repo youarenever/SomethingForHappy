@@ -1,0 +1,287 @@
+<VAST version="3.0">
+   <Ad id="TA201607141151300011" sequence="1">
+      <InLine>
+         <AdSystem>PPTV</AdSystem>
+         <AdTitle>Unknown</AdTitle>
+         <Creatives>
+            <Creative sequence="0">
+               <Linear>
+                  <CreativeExtensions>
+                     <CreativeExtension type="AdvertAttribute">
+                        <PositionId>300001</PositionId>
+                        <Mute>true</Mute>
+                        <ThirdPartyCreative>false</ThirdPartyCreative>
+                        <SDKextension/>
+                        <StartTime>-1</StartTime>
+                        <Owner>0</Owner>
+                        <Ui>1</Ui>
+                        <IsOralAd>0</IsOralAd>
+                        <IgnoreAdvert>0</IgnoreAdvert>
+                        <IgnoreDuration>false</IgnoreDuration>
+                        <NoAdReturnNoticeUrl><![CDATA[https://jp.as.pptv.com/ikanstat/noReturn?pos=300001&tid=TA201607141151300017&vvid=039e698b-9cec-4d91-9c4f-76e552bdb72d&uuid=149906742477397380637&lid=001&rqip=10.200.203.17&platform=1&ver=3.6.8.0055&existBackupAd=1&o=forqd1&e=9FFFD0336A58AF8284B047CB95D5D51F&sectionid=]]></NoAdReturnNoticeUrl>
+                        <WrapperFillNoticeUrl><![CDATA[https://jp.as.pptv.com/ikanstat/wrapperfill?pos=300001&tid=TA201607141151300017&vvid=039e698b-9cec-4d91-9c4f-76e552bdb72d&uuid=149906742477397380637&lid=001&rqip=10.200.203.17&platform=1&ver=3.6.8.0055&existBackupAd=1&o=forqd1&e=9FFFD0336A58AF8284B047CB95D5D51F&sectionid=]]></WrapperFillNoticeUrl>
+                        <WrapperBackupNoticeUrl><![CDATA[https://jp.as.pptv.com/ikanstat/wrapperbackup?pos=300001&tid=TA201607141151300017&vvid=039e698b-9cec-4d91-9c4f-76e552bdb72d&uuid=149906742477397380637&lid=001&rqip=10.200.203.17&platform=1&ver=3.6.8.0055&existBackupAd=1&o=forqd1&e=9FFFD0336A58AF8284B047CB95D5D51F&sectionid=]]></WrapperBackupNoticeUrl>
+                        <SDKmonitor/>
+                     </CreativeExtension>
+                  </CreativeExtensions>
+                  <Duration>00:00:15</Duration>
+                  <TrackingEvents>
+                     <Tracking event="start"><![CDATA[https://jp.as.pptv.com/ikanstat/stat?pos=300001&tid=TA201607141151300017&sid=10020777&cid=&pid=10020777&vchid=0&seq=1&lid=001&rqip=180931345&rqfreq=&rqtime=1499067424758&mtrseq=0&vvid=039e698b-9cec-4d91-9c4f-76e552bdb72d&uuid=149906742477397380637&ver=3.6.8.0055&dpid=c1ce1bf588eec4f438398ff901c92b05&act=1000&platform=1&reqtype=vast&o=forqd1&e=A6D9C70BCB98FB938674195119474029&sectionid=&ctype=5&creative_abtest=0]]></Tracking>
+                     <Tracking event="complete"><![CDATA[https://jp.as.pptv.com/ikanstat/stat?pos=300001&tid=TA201607141151300017&sid=10020777&cid=&pid=10020777&vchid=0&seq=1&lid=001&rqip=180931345&rqfreq=&rqtime=1499067424758&mtrseq=0&vvid=039e698b-9cec-4d91-9c4f-76e552bdb72d&uuid=149906742477397380637&ver=3.6.8.0055&dpid=c1ce1bf588eec4f438398ff901c92b05&act=1001&platform=1&reqtype=vast&o=forqd1&e=A6D9C70BCB98FB938674195119474029&sectionid=&ctype=5&creative_abtest=0]]></Tracking>
+                     <Tracking event="firstQuartile"><![CDATA[https://jp.as.pptv.com/ikanstat/stat?pos=300001&tid=TA201607141151300017&sid=10020777&cid=&pid=10020777&vchid=0&seq=1&lid=001&rqip=180931345&rqfreq=&rqtime=1499067424758&mtrseq=0&vvid=039e698b-9cec-4d91-9c4f-76e552bdb72d&uuid=149906742477397380637&ver=3.6.8.0055&dpid=c1ce1bf588eec4f438398ff901c92b05&act=1011&platform=1&reqtype=vast&o=forqd1&e=A6D9C70BCB98FB938674195119474029&sectionid=&ctype=5&creative_abtest=0]]></Tracking>
+                     <Tracking event="midpoint"><![CDATA[https://jp.as.pptv.com/ikanstat/stat?pos=300001&tid=TA201607141151300017&sid=10020777&cid=&pid=10020777&vchid=0&seq=1&lid=001&rqip=180931345&rqfreq=&rqtime=1499067424758&mtrseq=0&vvid=039e698b-9cec-4d91-9c4f-76e552bdb72d&uuid=149906742477397380637&ver=3.6.8.0055&dpid=c1ce1bf588eec4f438398ff901c92b05&act=1012&platform=1&reqtype=vast&o=forqd1&e=423D95E5447C09809890472125E6C999&sectionid=&ctype=5&creative_abtest=0]]></Tracking>
+                     <Tracking event="thirdQuartile"><![CDATA[https://jp.as.pptv.com/ikanstat/stat?pos=300001&tid=TA201607141151300017&sid=10020777&cid=&pid=10020777&vchid=0&seq=1&lid=001&rqip=180931345&rqfreq=&rqtime=1499067424758&mtrseq=0&vvid=039e698b-9cec-4d91-9c4f-76e552bdb72d&uuid=149906742477397380637&ver=3.6.8.0055&dpid=c1ce1bf588eec4f438398ff901c92b05&act=1013&platform=1&reqtype=vast&o=forqd1&e=423D95E5447C09809890472125E6C999&sectionid=&ctype=5&creative_abtest=0]]></Tracking>
+                     <Tracking event="start"><![CDATA[http://vpptv.admaster.com.cn/i/2667c3a180f644b1b228e421376a3f84&&81412636&&&1&2&ac5c4827579dd4a371089a432dce48de&0&ac5c4827579dd4a371089a432dce48de&0&11.4+r402&&1&en-us&f8b156cfa62a&d555ece123d085100c53a1743e48d333&3&&&windows+nt&5.0&&c1ce1bf588eec4f438398ff901c92b05&c1ce1bf588eec4f438398ff901c92b05&&1920*1080&10020777&http%3A%2F%2Fasimgs.pplive.cn%2Fimgs%2Fmaterials%2F2016%2F7%2F14%2F20160714115236_20150114191010_3a.flv&0&1499067424756&&&149906742477397380637&3&ac5c4827579dd4a371089a432dce48de&2f3a76cee7b2f106d34e899a0d2ea842&6a7251baaad2820a3bbc49ac686f38c3&&__AAID__&__OPENUDID__&&&__UDID__&__ODIN__&10.200.203.17&10020777&&&f10.200.203.17&TA201607141151300017,1,10.200.203.17,10.200.203.17&chid=10020777&plt=pc&iesid=PPTV_201607141151300017&adid=PUB_TA201607141151300017&dx=1]]></Tracking>
+                     <Tracking event="complete">http://vpptv.admaster.com.cn/i/a55244,b579065,c1113,i0,m202,f10.200.203.17</Tracking>
+                     <Tracking event="complete"><![CDATA[http://secure-chn.imrworldwide.com/cgi-bin/gn?prd=chn&ci=ent578353&am=59&at=view&rt=banner&st=image&ca=cmp115957&cr=crv366038&pc=plc3252348&c9=devid,OS-3~IMEI-ac5c4827579dd4a371089a432dce48de~MaC-2f3a76cee7b2f106d34e899a0d2ea842~IDFA-~OpenUDID-__OPENUDID__~AndroidID-&c13=asid,PFF86801F-1B2B-4F31-A1D1-E6A9859412A2&r=1499067424756]]></Tracking>
+                  </TrackingEvents>
+                  <VideoClicks>
+                     <ClickThrough/>
+                     <ClickTracking><![CDATA[https://jp.as.pptv.com/ikanstat/click?pos=300001&tid=TA201607141151300017&sid=10020777&cid=&pid=10020777&vchid=0&lid=001&rqip=180931345&rqfreq=&rqtime=1499067424758&vvid=039e698b-9cec-4d91-9c4f-76e552bdb72d&uuid=149906742477397380637&ver=3.6.8.0055&dpid=c1ce1bf588eec4f438398ff901c92b05&platform=1&reqtype=vast&o=forqd1&e=D3674B8BC470644CAA0221395FE65D2B&sectionid=&ctype=5]]></ClickTracking>
+                     <ClickTracking><![CDATA[http://vpptv.admaster.com.cn/i/h,f10.200.203.1710.200.203.17&10020777&&&10020777&10020777&0,1,10.200.203.17,10.200.203.17]]></ClickTracking>
+                  </VideoClicks>
+                  <MediaFiles>
+                     <MediaFile height="420" width="560" delivery="progressive" type="video/x-flv" maintainAspectRatio="true" id="448731">http://asimgs.pplive.cn/imgs/materials/2016/7/14/20160714115236_20150114191010_3a.flv</MediaFile>
+                  </MediaFiles>
+               </Linear>
+            </Creative>
+         </Creatives>
+         <Extensions>
+            <Extension>
+               <BackupAdList>
+                  <Ad id="TA201607271708190001" sequence="1">
+                     <InLine>
+                        <AdSystem>PPTV</AdSystem>
+                        <AdTitle>Unknown</AdTitle>
+                        <Creatives>
+                           <Creative sequence="0">
+                              <Linear>
+                                 <CreativeExtensions>
+                                    <CreativeExtension type="AdvertAttribute">
+                                       <PositionId>300001</PositionId>
+                                       <Mute>true</Mute>
+                                       <ThirdPartyCreative>false</ThirdPartyCreative>
+                                       <SDKextension/>
+                                       <StartTime>-1</StartTime>
+                                       <Owner>0</Owner>
+                                       <Ui>1</Ui>
+                                       <IsOralAd>0</IsOralAd>
+                                       <IgnoreAdvert>0</IgnoreAdvert>
+                                       <IgnoreDuration>false</IgnoreDuration>
+                                       <NoAdReturnNoticeUrl><![CDATA[https://jp.as.pptv.com/ikanstat/noReturn?pos=300001&tid=TA201607271708190001&vvid=039e698b-9cec-4d91-9c4f-76e552bdb72d&uuid=149906742477363983479&lid=001&rqip=10.200.203.17&platform=1&ver=3.6.8.0055&existBackupAd=0&o=forqd1&e=C64E608FA1CB44AB5C40935925520148&sectionid=]]></NoAdReturnNoticeUrl>
+                                       <WrapperFillNoticeUrl><![CDATA[https://jp.as.pptv.com/ikanstat/wrapperfill?pos=300001&tid=TA201607271708190001&vvid=039e698b-9cec-4d91-9c4f-76e552bdb72d&uuid=149906742477363983479&lid=001&rqip=10.200.203.17&platform=1&ver=3.6.8.0055&existBackupAd=0&o=forqd1&e=29F9DB63E7D9EAB4A90096609EE4BDCF&sectionid=]]></WrapperFillNoticeUrl>
+                                       <WrapperBackupNoticeUrl><![CDATA[https://jp.as.pptv.com/ikanstat/wrapperbackup?pos=300001&tid=TA201607271708190001&vvid=039e698b-9cec-4d91-9c4f-76e552bdb72d&uuid=149906742477363983479&lid=001&rqip=10.200.203.17&platform=1&ver=3.6.8.0055&existBackupAd=0&o=forqd1&e=29F9DB63E7D9EAB4A90096609EE4BDCF&sectionid=]]></WrapperBackupNoticeUrl>
+                                       <SDKmonitor/>
+                                    </CreativeExtension>
+                                 </CreativeExtensions>
+                                 <Duration>00:00:15</Duration>
+                                 <TrackingEvents>
+                                    <Tracking event="start"><![CDATA[https://jp.as.pptv.com/ikanstat/stat?pos=300001&tid=TA201607271708190001&sid=10020777&cid=&pid=10020777&vchid=0&seq=1&lid=001&rqip=180931345&rqfreq=&rqtime=1499067424758&mtrseq=0&vvid=039e698b-9cec-4d91-9c4f-76e552bdb72d&uuid=149906742477363983479&ver=3.6.8.0055&dpid=c1ce1bf588eec4f438398ff901c92b05&act=1000&platform=1&reqtype=vast&o=forqd1&e=29F9DB63E7D9EAB4A90096609EE4BDCF&sectionid=&backup=1&ctype=5&creative_abtest=0]]></Tracking>
+                                    <Tracking event="complete"><![CDATA[https://jp.as.pptv.com/ikanstat/stat?pos=300001&tid=TA201607271708190001&sid=10020777&cid=&pid=10020777&vchid=0&seq=1&lid=001&rqip=180931345&rqfreq=&rqtime=1499067424758&mtrseq=0&vvid=039e698b-9cec-4d91-9c4f-76e552bdb72d&uuid=149906742477363983479&ver=3.6.8.0055&dpid=c1ce1bf588eec4f438398ff901c92b05&act=1001&platform=1&reqtype=vast&o=forqd1&e=29F9DB63E7D9EAB4A90096609EE4BDCF&sectionid=&backup=1&ctype=5&creative_abtest=0]]></Tracking>
+                                    <Tracking event="firstQuartile"><![CDATA[https://jp.as.pptv.com/ikanstat/stat?pos=300001&tid=TA201607271708190001&sid=10020777&cid=&pid=10020777&vchid=0&seq=1&lid=001&rqip=180931345&rqfreq=&rqtime=1499067424758&mtrseq=0&vvid=039e698b-9cec-4d91-9c4f-76e552bdb72d&uuid=149906742477363983479&ver=3.6.8.0055&dpid=c1ce1bf588eec4f438398ff901c92b05&act=1011&platform=1&reqtype=vast&o=forqd1&e=4933409C25D1E3C2D4F38388D720E696&sectionid=&backup=1&ctype=5&creative_abtest=0]]></Tracking>
+                                    <Tracking event="midpoint"><![CDATA[https://jp.as.pptv.com/ikanstat/stat?pos=300001&tid=TA201607271708190001&sid=10020777&cid=&pid=10020777&vchid=0&seq=1&lid=001&rqip=180931345&rqfreq=&rqtime=1499067424758&mtrseq=0&vvid=039e698b-9cec-4d91-9c4f-76e552bdb72d&uuid=149906742477363983479&ver=3.6.8.0055&dpid=c1ce1bf588eec4f438398ff901c92b05&act=1012&platform=1&reqtype=vast&o=forqd1&e=4933409C25D1E3C2D4F38388D720E696&sectionid=&backup=1&ctype=5&creative_abtest=0]]></Tracking>
+                                    <Tracking event="thirdQuartile"><![CDATA[https://jp.as.pptv.com/ikanstat/stat?pos=300001&tid=TA201607271708190001&sid=10020777&cid=&pid=10020777&vchid=0&seq=1&lid=001&rqip=180931345&rqfreq=&rqtime=1499067424758&mtrseq=0&vvid=039e698b-9cec-4d91-9c4f-76e552bdb72d&uuid=149906742477363983479&ver=3.6.8.0055&dpid=c1ce1bf588eec4f438398ff901c92b05&act=1013&platform=1&reqtype=vast&o=forqd1&e=4933409C25D1E3C2D4F38388D720E696&sectionid=&backup=1&ctype=5&creative_abtest=0]]></Tracking>
+                                    <Tracking event="start">http://asimgs.pplive.cn/imgs/materials/2015/8/1/20150801104415_1364360396192_581ywa.jpg</Tracking>
+                                    <Tracking event="complete">http://asimgs.pplive.cn/imgs/materials/2015/8/1/20150801104415_1364360396192_581ywa.jpg</Tracking>
+                                    <Tracking event="midpoint">http://asimgs.pplive.cn/imgs/materials/2015/8/1/20150801104415_1364360396192_581ywa.jpg</Tracking>
+                                    <Tracking event="firstQuartile">http://asimgs.pplive.cn/imgs/materials/2015/8/1/20150801104415_1364360396192_581ywa.jpg</Tracking>
+                                    <Tracking event="thirdQuartile">http://asimgs.pplive.cn/imgs/materials/2015/8/1/20150801104415_1364360396192_581ywa.jpg</Tracking>
+                                 </TrackingEvents>
+                                 <VideoClicks>
+                                    <ClickThrough/>
+                                    <ClickTracking><![CDATA[https://jp.as.pptv.com/ikanstat/click?pos=300001&tid=TA201607271708190001&sid=10020777&cid=&pid=10020777&vchid=0&lid=001&rqip=180931345&rqfreq=&rqtime=1499067424758&vvid=039e698b-9cec-4d91-9c4f-76e552bdb72d&uuid=149906742477363983479&ver=3.6.8.0055&dpid=c1ce1bf588eec4f438398ff901c92b05&platform=1&reqtype=vast&o=forqd1&e=E0D5296B0780AB3009F7C0EF556B2496&sectionid=&backup=1&ctype=5]]></ClickTracking>
+                                    <ClickTracking>http://asimgs.pplive.cn/imgs/materials/2015/8/1/20150801104415_1364360396192_581ywa.jpg</ClickTracking>
+                                 </VideoClicks>
+                                 <MediaFiles>
+                                    <MediaFile height="420" width="560" delivery="progressive" type="image/jpeg" maintainAspectRatio="true" id="448585">http://asimgs.pplive.cn/imgs/materials/2015/8/1/20150801104415_1364360396192_581ywa.jpg</MediaFile>
+                                 </MediaFiles>
+                              </Linear>
+                           </Creative>
+                        </Creatives>
+                     </InLine>
+                  </Ad>
+                  <Ad id="TA201602191509330002" sequence="2">
+                     <InLine>
+                        <AdSystem>PPTV</AdSystem>
+                        <AdTitle>Unknown</AdTitle>
+                        <Creatives>
+                           <Creative sequence="0">
+                              <Linear>
+                                 <CreativeExtensions>
+                                    <CreativeExtension type="AdvertAttribute">
+                                       <PositionId>300001</PositionId>
+                                       <Mute>true</Mute>
+                                       <ThirdPartyCreative>false</ThirdPartyCreative>
+                                       <SDKextension/>
+                                       <StartTime>-1</StartTime>
+                                       <Owner>0</Owner>
+                                       <Ui>1</Ui>
+                                       <IsOralAd>0</IsOralAd>
+                                       <IgnoreAdvert>0</IgnoreAdvert>
+                                       <IgnoreDuration>false</IgnoreDuration>
+                                       <NoAdReturnNoticeUrl><![CDATA[https://jp.as.pptv.com/ikanstat/noReturn?pos=300001&tid=TA201602191509330002&vvid=039e698b-9cec-4d91-9c4f-76e552bdb72d&uuid=149906742477355417161&lid=001&rqip=10.200.203.17&platform=1&ver=3.6.8.0055&existBackupAd=0&o=forqd1&e=0AB13E1191468DA5524749EE7EAF1D2B&sectionid=]]></NoAdReturnNoticeUrl>
+                                       <WrapperFillNoticeUrl><![CDATA[https://jp.as.pptv.com/ikanstat/wrapperfill?pos=300001&tid=TA201602191509330002&vvid=039e698b-9cec-4d91-9c4f-76e552bdb72d&uuid=149906742477355417161&lid=001&rqip=10.200.203.17&platform=1&ver=3.6.8.0055&existBackupAd=0&o=forqd1&e=0AB13E1191468DA5524749EE7EAF1D2B&sectionid=]]></WrapperFillNoticeUrl>
+                                       <WrapperBackupNoticeUrl><![CDATA[https://jp.as.pptv.com/ikanstat/wrapperbackup?pos=300001&tid=TA201602191509330002&vvid=039e698b-9cec-4d91-9c4f-76e552bdb72d&uuid=149906742477355417161&lid=001&rqip=10.200.203.17&platform=1&ver=3.6.8.0055&existBackupAd=0&o=forqd1&e=5F6A673232827D4B923C9F8DCDDF681A&sectionid=]]></WrapperBackupNoticeUrl>
+                                       <SDKmonitor/>
+                                    </CreativeExtension>
+                                 </CreativeExtensions>
+                                 <Duration>00:00:15</Duration>
+                                 <TrackingEvents>
+                                    <Tracking event="start"><![CDATA[https://jp.as.pptv.com/ikanstat/stat?pos=300001&tid=TA201602191509330002&sid=10020777&cid=&pid=10020777&vchid=0&seq=2&lid=001&rqip=180931345&rqfreq=&rqtime=1499067424758&mtrseq=0&vvid=039e698b-9cec-4d91-9c4f-76e552bdb72d&uuid=149906742477355417161&ver=3.6.8.0055&dpid=c1ce1bf588eec4f438398ff901c92b05&act=1000&platform=1&reqtype=vast&o=forqd1&e=5F6A673232827D4B923C9F8DCDDF681A&sectionid=&backup=1&ctype=5&creative_abtest=0]]></Tracking>
+                                    <Tracking event="complete"><![CDATA[https://jp.as.pptv.com/ikanstat/stat?pos=300001&tid=TA201602191509330002&sid=10020777&cid=&pid=10020777&vchid=0&seq=2&lid=001&rqip=180931345&rqfreq=&rqtime=1499067424758&mtrseq=0&vvid=039e698b-9cec-4d91-9c4f-76e552bdb72d&uuid=149906742477355417161&ver=3.6.8.0055&dpid=c1ce1bf588eec4f438398ff901c92b05&act=1001&platform=1&reqtype=vast&o=forqd1&e=5F6A673232827D4B923C9F8DCDDF681A&sectionid=&backup=1&ctype=5&creative_abtest=0]]></Tracking>
+                                    <Tracking event="firstQuartile"><![CDATA[https://jp.as.pptv.com/ikanstat/stat?pos=300001&tid=TA201602191509330002&sid=10020777&cid=&pid=10020777&vchid=0&seq=2&lid=001&rqip=180931345&rqfreq=&rqtime=1499067424758&mtrseq=0&vvid=039e698b-9cec-4d91-9c4f-76e552bdb72d&uuid=149906742477355417161&ver=3.6.8.0055&dpid=c1ce1bf588eec4f438398ff901c92b05&act=1011&platform=1&reqtype=vast&o=forqd1&e=AEE9AE9F369133C07DAEE5CB118F77FA&sectionid=&backup=1&ctype=5&creative_abtest=0]]></Tracking>
+                                    <Tracking event="midpoint"><![CDATA[https://jp.as.pptv.com/ikanstat/stat?pos=300001&tid=TA201602191509330002&sid=10020777&cid=&pid=10020777&vchid=0&seq=2&lid=001&rqip=180931345&rqfreq=&rqtime=1499067424758&mtrseq=0&vvid=039e698b-9cec-4d91-9c4f-76e552bdb72d&uuid=149906742477355417161&ver=3.6.8.0055&dpid=c1ce1bf588eec4f438398ff901c92b05&act=1012&platform=1&reqtype=vast&o=forqd1&e=AEE9AE9F369133C07DAEE5CB118F77FA&sectionid=&backup=1&ctype=5&creative_abtest=0]]></Tracking>
+                                    <Tracking event="thirdQuartile"><![CDATA[https://jp.as.pptv.com/ikanstat/stat?pos=300001&tid=TA201602191509330002&sid=10020777&cid=&pid=10020777&vchid=0&seq=2&lid=001&rqip=180931345&rqfreq=&rqtime=1499067424758&mtrseq=0&vvid=039e698b-9cec-4d91-9c4f-76e552bdb72d&uuid=149906742477355417161&ver=3.6.8.0055&dpid=c1ce1bf588eec4f438398ff901c92b05&act=1013&platform=1&reqtype=vast&o=forqd1&e=AEE9AE9F369133C07DAEE5CB118F77FA&sectionid=&backup=1&ctype=5&creative_abtest=0]]></Tracking>
+                                    <Tracking event="start"><![CDATA[http://vpptv.admaster.com.cn/i/2667c3a180f644b1b228e421376a3f84&&24418745&&&1&2&ac5c4827579dd4a371089a432dce48de&0&ac5c4827579dd4a371089a432dce48de&0&11.4+r402&&1&en-us&f8b156cfa62a&d555ece123d085100c53a1743e48d333&3&&&windows+nt&5.0&&c1ce1bf588eec4f438398ff901c92b05&c1ce1bf588eec4f438398ff901c92b05&&1920*1080&10020777&http%3A%2F%2Fasimgs.pplive.cn%2Fimgs%2Fmaterials%2F2016%2F7%2F14%2F20160714115236_20150114191010_3a.flv&0&1499067424756&&&149906742477355417161&3&ac5c4827579dd4a371089a432dce48de&2f3a76cee7b2f106d34e899a0d2ea842&6a7251baaad2820a3bbc49ac686f38c3&&__AAID__&__OPENUDID__&&&__UDID__&__ODIN__&10.200.203.17&10020777&&&f10.200.203.17&TA201602191509330002,1,10.200.203.17,10.200.203.17&chid=10020777&plt=pc&iesid=PPTV_201602191509330002&adid=PUB_TA201602191509330002&dx=1]]></Tracking>
+                                    <Tracking event="complete">http://vpptv.admaster.com.cn/i/a55244,b579065,c1113,i0,m202,f10.200.203.17</Tracking>
+                                    <Tracking event="complete"><![CDATA[http://secure-chn.imrworldwide.com/cgi-bin/gn?prd=chn&ci=ent578353&am=59&at=view&rt=banner&st=image&ca=cmp115957&cr=crv366038&pc=plc3252348&c9=devid,OS-3~IMEI-ac5c4827579dd4a371089a432dce48de~MaC-2f3a76cee7b2f106d34e899a0d2ea842~IDFA-~OpenUDID-__OPENUDID__~AndroidID-&c13=asid,PFF86801F-1B2B-4F31-A1D1-E6A9859412A2&r=1499067424756]]></Tracking>
+                                 </TrackingEvents>
+                                 <VideoClicks>
+                                    <ClickThrough/>
+                                    <ClickTracking><![CDATA[https://jp.as.pptv.com/ikanstat/click?pos=300001&tid=TA201602191509330002&sid=10020777&cid=&pid=10020777&vchid=0&lid=001&rqip=180931345&rqfreq=&rqtime=1499067424758&vvid=039e698b-9cec-4d91-9c4f-76e552bdb72d&uuid=149906742477355417161&ver=3.6.8.0055&dpid=c1ce1bf588eec4f438398ff901c92b05&platform=1&reqtype=vast&o=forqd1&e=DAFC51087401AFFDF7A15226BB64E197&sectionid=&backup=1&ctype=5]]></ClickTracking>
+                                    <ClickTracking><![CDATA[http://vpptv.admaster.com.cn/i/h,f10.200.203.1710.200.203.17&10020777&&&10020777&10020777&0,1,10.200.203.17,10.200.203.17]]></ClickTracking>
+                                 </VideoClicks>
+                                 <MediaFiles>
+                                    <MediaFile height="420" width="560" delivery="progressive" type="video/x-flv" maintainAspectRatio="true" id="448731">http://asimgs.pplive.cn/imgs/materials/2016/7/14/20160714115236_20150114191010_3a.flv</MediaFile>
+                                 </MediaFiles>
+                              </Linear>
+                           </Creative>
+                        </Creatives>
+                     </InLine>
+                  </Ad>
+                  <Ad id="TA201602231507080001" sequence="3">
+                     <InLine>
+                        <AdSystem>PPTV</AdSystem>
+                        <AdTitle>Unknown</AdTitle>
+                        <Creatives>
+                           <Creative sequence="0">
+                              <Linear>
+                                 <CreativeExtensions>
+                                    <CreativeExtension type="AdvertAttribute">
+                                       <PositionId>300001</PositionId>
+                                       <Mute>true</Mute>
+                                       <ThirdPartyCreative>false</ThirdPartyCreative>
+                                       <SDKextension/>
+                                       <StartTime>-1</StartTime>
+                                       <Owner>0</Owner>
+                                       <Ui>1</Ui>
+                                       <IsOralAd>0</IsOralAd>
+                                       <IgnoreAdvert>0</IgnoreAdvert>
+                                       <IgnoreDuration>false</IgnoreDuration>
+                                       <NoAdReturnNoticeUrl><![CDATA[https://jp.as.pptv.com/ikanstat/noReturn?pos=300001&tid=TA201602231507080001&vvid=039e698b-9cec-4d91-9c4f-76e552bdb72d&uuid=149906742477392097529&lid=001&rqip=10.200.203.17&platform=1&ver=3.6.8.0055&existBackupAd=0&o=forqd1&e=5B0ECED89269848AFC78E9D483468DD0&sectionid=]]></NoAdReturnNoticeUrl>
+                                       <WrapperFillNoticeUrl><![CDATA[https://jp.as.pptv.com/ikanstat/wrapperfill?pos=300001&tid=TA201602231507080001&vvid=039e698b-9cec-4d91-9c4f-76e552bdb72d&uuid=149906742477392097529&lid=001&rqip=10.200.203.17&platform=1&ver=3.6.8.0055&existBackupAd=0&o=forqd1&e=5B0ECED89269848AFC78E9D483468DD0&sectionid=]]></WrapperFillNoticeUrl>
+                                       <WrapperBackupNoticeUrl><![CDATA[https://jp.as.pptv.com/ikanstat/wrapperbackup?pos=300001&tid=TA201602231507080001&vvid=039e698b-9cec-4d91-9c4f-76e552bdb72d&uuid=149906742477392097529&lid=001&rqip=10.200.203.17&platform=1&ver=3.6.8.0055&existBackupAd=0&o=forqd1&e=2649D79CF34D2807344E0E3F836DD81B&sectionid=]]></WrapperBackupNoticeUrl>
+                                       <SDKmonitor/>
+                                    </CreativeExtension>
+                                 </CreativeExtensions>
+                                 <Duration>00:00:15</Duration>
+                                 <TrackingEvents>
+                                    <Tracking event="start"><![CDATA[https://jp.as.pptv.com/ikanstat/stat?pos=300001&tid=TA201602231507080001&sid=10020777&cid=&pid=10020777&vchid=0&seq=3&lid=001&rqip=180931345&rqfreq=&rqtime=1499067424758&mtrseq=0&vvid=039e698b-9cec-4d91-9c4f-76e552bdb72d&uuid=149906742477392097529&ver=3.6.8.0055&dpid=c1ce1bf588eec4f438398ff901c92b05&act=1000&platform=1&reqtype=vast&o=forqd1&e=2649D79CF34D2807344E0E3F836DD81B&sectionid=&backup=1&ctype=5&creative_abtest=0]]></Tracking>
+                                    <Tracking event="complete"><![CDATA[https://jp.as.pptv.com/ikanstat/stat?pos=300001&tid=TA201602231507080001&sid=10020777&cid=&pid=10020777&vchid=0&seq=3&lid=001&rqip=180931345&rqfreq=&rqtime=1499067424758&mtrseq=0&vvid=039e698b-9cec-4d91-9c4f-76e552bdb72d&uuid=149906742477392097529&ver=3.6.8.0055&dpid=c1ce1bf588eec4f438398ff901c92b05&act=1001&platform=1&reqtype=vast&o=forqd1&e=2649D79CF34D2807344E0E3F836DD81B&sectionid=&backup=1&ctype=5&creative_abtest=0]]></Tracking>
+                                    <Tracking event="start"><![CDATA[http://vpptv.admaster.com.cn/i/2667c3a180f644b1b228e421376a3f84&&48700860&&&1&2&ac5c4827579dd4a371089a432dce48de&0&ac5c4827579dd4a371089a432dce48de&0&11.4+r402&&1&en-us&f8b156cfa62a&d555ece123d085100c53a1743e48d333&3&&&windows+nt&5.0&&c1ce1bf588eec4f438398ff901c92b05&c1ce1bf588eec4f438398ff901c92b05&&1920*1080&10020777&http%3A%2F%2Fasimgs.pplive.cn%2Fimgs%2Fmaterials%2F2016%2F7%2F14%2F20160714115236_20150114191010_3a.flv&0&1499067424756&&&149906742477392097529&3&ac5c4827579dd4a371089a432dce48de&2f3a76cee7b2f106d34e899a0d2ea842&6a7251baaad2820a3bbc49ac686f38c3&&__AAID__&__OPENUDID__&&&__UDID__&__ODIN__&10.200.203.17&10020777&&&f10.200.203.17&TA201602231507080001,1,10.200.203.17,10.200.203.17&chid=10020777&plt=pc&iesid=PPTV_201602231507080001&adid=PUB_TA201602231507080001&dx=1]]></Tracking>
+                                    <Tracking event="complete">http://vpptv.admaster.com.cn/i/a55244,b579065,c1113,i0,m202,f10.200.203.17</Tracking>
+                                    <Tracking event="complete"><![CDATA[http://secure-chn.imrworldwide.com/cgi-bin/gn?prd=chn&ci=ent578353&am=59&at=view&rt=banner&st=image&ca=cmp115957&cr=crv366038&pc=plc3252348&c9=devid,OS-3~IMEI-ac5c4827579dd4a371089a432dce48de~MaC-2f3a76cee7b2f106d34e899a0d2ea842~IDFA-~OpenUDID-__OPENUDID__~AndroidID-&c13=asid,PFF86801F-1B2B-4F31-A1D1-E6A9859412A2&r=1499067424756]]></Tracking>
+                                 </TrackingEvents>
+                                 <VideoClicks>
+                                    <ClickThrough/>
+                                    <ClickTracking><![CDATA[https://jp.as.pptv.com/ikanstat/click?pos=300001&tid=TA201602231507080001&sid=10020777&cid=&pid=10020777&vchid=0&lid=001&rqip=180931345&rqfreq=&rqtime=1499067424758&vvid=039e698b-9cec-4d91-9c4f-76e552bdb72d&uuid=149906742477392097529&ver=3.6.8.0055&dpid=c1ce1bf588eec4f438398ff901c92b05&platform=1&reqtype=vast&o=forqd1&e=88D81A7FBA280C2AC339D919D8DEF546&sectionid=&backup=1&ctype=5]]></ClickTracking>
+                                    <ClickTracking><![CDATA[http://vpptv.admaster.com.cn/i/h,f10.200.203.1710.200.203.17&10020777&&&10020777&10020777&0,1,10.200.203.17,10.200.203.17]]></ClickTracking>
+                                 </VideoClicks>
+                                 <MediaFiles>
+                                    <MediaFile height="420" width="560" delivery="progressive" type="video/x-flv" maintainAspectRatio="true" id="448731">http://asimgs.pplive.cn/imgs/materials/2016/7/14/20160714115236_20150114191010_3a.flv</MediaFile>
+                                 </MediaFiles>
+                              </Linear>
+                           </Creative>
+                        </Creatives>
+                     </InLine>
+                  </Ad>
+               </BackupAdList>
+            </Extension>
+         </Extensions>
+      </InLine>
+   </Ad>
+   <Ad id="TA201607141151300017" sequence="2">
+      <InLine>
+         <AdSystem>PPTV</AdSystem>
+         <AdTitle>Unknown</AdTitle>
+         <Creatives>
+            <Creative sequence="0">
+               <Linear>
+                  <CreativeExtensions>
+                     <CreativeExtension type="AdvertAttribute">
+                        <PositionId>300001</PositionId>
+                        <Mute>true</Mute>
+                        <ThirdPartyCreative>false</ThirdPartyCreative>
+                        <SDKextension/>
+                        <StartTime>-1</StartTime>
+                        <Owner>0</Owner>
+                        <Ui>1</Ui>
+                        <IsOralAd>0</IsOralAd>
+                        <IgnoreAdvert>0</IgnoreAdvert>
+                        <IgnoreDuration>false</IgnoreDuration>
+                        <NoAdReturnNoticeUrl><![CDATA[https://jp.as.pptv.com/ikanstat/noReturn?pos=300001&tid=TA201508011626180030&vvid=039e698b-9cec-4d91-9c4f-76e552bdb72d&uuid=149906742477322315438&lid=001&rqip=10.200.203.17&platform=1&ver=3.6.8.0055&existBackupAd=1&o=forqd1&e=82BA46FD2256B6130339A477A49B61B8&sectionid=]]></NoAdReturnNoticeUrl>
+                        <WrapperFillNoticeUrl><![CDATA[https://jp.as.pptv.com/ikanstat/wrapperfill?pos=300001&tid=TA201508011626180030&vvid=039e698b-9cec-4d91-9c4f-76e552bdb72d&uuid=149906742477322315438&lid=001&rqip=10.200.203.17&platform=1&ver=3.6.8.0055&existBackupAd=1&o=forqd1&e=B58D1AF8222C69B72BED173931CD8B9B&sectionid=]]></WrapperFillNoticeUrl>
+                        <WrapperBackupNoticeUrl><![CDATA[https://jp.as.pptv.com/ikanstat/wrapperbackup?pos=300001&tid=TA201508011626180030&vvid=039e698b-9cec-4d91-9c4f-76e552bdb72d&uuid=149906742477322315438&lid=001&rqip=10.200.203.17&platform=1&ver=3.6.8.0055&existBackupAd=1&o=forqd1&e=B58D1AF8222C69B72BED173931CD8B9B&sectionid=]]></WrapperBackupNoticeUrl>
+                        <SDKmonitor/>
+                     </CreativeExtension>
+                  </CreativeExtensions>
+                  <Duration>00:00:15</Duration>
+                  <TrackingEvents>
+                     <Tracking event="start"><![CDATA[https://jp.as.pptv.com/ikanstat/stat?pos=300001&tid=TA201508011626180030&sid=10020777&cid=&pid=10020777&vchid=0&seq=2&lid=001&rqip=180931345&rqfreq=&rqtime=1499067424758&mtrseq=0&vvid=039e698b-9cec-4d91-9c4f-76e552bdb72d&uuid=149906742477322315438&ver=3.6.8.0055&dpid=c1ce1bf588eec4f438398ff901c92b05&act=1000&platform=1&reqtype=vast&o=forqd1&e=B58D1AF8222C69B72BED173931CD8B9B&sectionid=&ctype=5&creative_abtest=0]]></Tracking>
+                     <Tracking event="complete"><![CDATA[https://jp.as.pptv.com/ikanstat/stat?pos=300001&tid=TA201508011626180030&sid=10020777&cid=&pid=10020777&vchid=0&seq=2&lid=001&rqip=180931345&rqfreq=&rqtime=1499067424758&mtrseq=0&vvid=039e698b-9cec-4d91-9c4f-76e552bdb72d&uuid=149906742477322315438&ver=3.6.8.0055&dpid=c1ce1bf588eec4f438398ff901c92b05&act=1001&platform=1&reqtype=vast&o=forqd1&e=B58D1AF8222C69B72BED173931CD8B9B&sectionid=&ctype=5&creative_abtest=0]]></Tracking>
+                  </TrackingEvents>
+                  <VideoClicks>
+                     <ClickThrough/>
+                     <ClickTracking><![CDATA[https://jp.as.pptv.com/ikanstat/click?pos=300001&tid=TA201508011626180030&sid=10020777&cid=&pid=10020777&vchid=0&lid=001&rqip=180931345&rqfreq=&rqtime=1499067424758&vvid=039e698b-9cec-4d91-9c4f-76e552bdb72d&uuid=149906742477322315438&ver=3.6.8.0055&dpid=c1ce1bf588eec4f438398ff901c92b05&platform=1&reqtype=vast&o=forqd1&e=A26F5ADC43E66A4B6A23FBFE45E47018&sectionid=&ctype=5]]></ClickTracking>
+                  </VideoClicks>
+                  <MediaFiles>
+                     <MediaFile height="420" width="560" delivery="progressive" type="image/jpeg" maintainAspectRatio="true" id="448565">http://asimgs.pplive.cn/imgs/materials/2015/8/1/20150801153634_1364277506282_97c601.jpg</MediaFile>
+                  </MediaFiles>
+               </Linear>
+            </Creative>
+         </Creatives>
+      </InLine>
+   </Ad>
+   <Ad id="TA201508011615210028" sequence="3">
+      <InLine>
+         <AdSystem>PPTV</AdSystem>
+         <AdTitle>Unknown</AdTitle>
+         <Creatives>
+            <Creative sequence="0">
+               <Linear>
+                  <CreativeExtensions>
+                     <CreativeExtension type="AdvertAttribute">
+                        <PositionId>300001</PositionId>
+                        <Mute>true</Mute>
+                        <ThirdPartyCreative>false</ThirdPartyCreative>
+                        <SDKextension/>
+                        <StartTime>-1</StartTime>
+                        <Owner>0</Owner>
+                        <Ui>2</Ui>
+                        <IsOralAd>0</IsOralAd>
+                        <IgnoreAdvert>0</IgnoreAdvert>
+                        <IgnoreDuration>false</IgnoreDuration>
+                        <NoAdReturnNoticeUrl><![CDATA[https://jp.as.pptv.com/ikanstat/noReturn?pos=300001&tid=TA201508011615210028&vvid=039e698b-9cec-4d91-9c4f-76e552bdb72d&uuid=149906742477398488346&lid=001&rqip=10.200.203.17&platform=1&ver=3.6.8.0055&existBackupAd=1&o=forqd1&e=CD9520A82FDF21564A42D5E630D8A25E&sectionid=]]></NoAdReturnNoticeUrl>
+                        <WrapperFillNoticeUrl><![CDATA[https://jp.as.pptv.com/ikanstat/wrapperfill?pos=300001&tid=TA201508011615210028&vvid=039e698b-9cec-4d91-9c4f-76e552bdb72d&uuid=149906742477398488346&lid=001&rqip=10.200.203.17&platform=1&ver=3.6.8.0055&existBackupAd=1&o=forqd1&e=CD9520A82FDF21564A42D5E630D8A25E&sectionid=]]></WrapperFillNoticeUrl>
+                        <WrapperBackupNoticeUrl><![CDATA[https://jp.as.pptv.com/ikanstat/wrapperbackup?pos=300001&tid=TA201508011615210028&vvid=039e698b-9cec-4d91-9c4f-76e552bdb72d&uuid=149906742477398488346&lid=001&rqip=10.200.203.17&platform=1&ver=3.6.8.0055&existBackupAd=1&o=forqd1&e=CD9520A82FDF21564A42D5E630D8A25E&sectionid=]]></WrapperBackupNoticeUrl>
+                        <SDKmonitor/>
+                     </CreativeExtension>
+                  </CreativeExtensions>
+                  <Duration>00:00:15</Duration>
+                  <TrackingEvents>
+                     <Tracking event="start"><![CDATA[https://jp.as.pptv.com/ikanstat/stat?pos=300001&tid=TA201508011615210028&sid=10020777&cid=&pid=10020777&vchid=0&seq=3&lid=001&rqip=180931345&rqfreq=&rqtime=1499067424758&mtrseq=0&vvid=039e698b-9cec-4d91-9c4f-76e552bdb72d&uuid=149906742477398488346&ver=3.6.8.0055&dpid=c1ce1bf588eec4f438398ff901c92b05&act=1000&platform=1&reqtype=vast&o=forqd1&e=AAF1E82C6C45D36F10B7990E30C0158C&sectionid=&ctype=5&creative_abtest=0]]></Tracking>
+                     <Tracking event="complete"><![CDATA[https://jp.as.pptv.com/ikanstat/stat?pos=300001&tid=TA201508011615210028&sid=10020777&cid=&pid=10020777&vchid=0&seq=3&lid=001&rqip=180931345&rqfreq=&rqtime=1499067424758&mtrseq=0&vvid=039e698b-9cec-4d91-9c4f-76e552bdb72d&uuid=149906742477398488346&ver=3.6.8.0055&dpid=c1ce1bf588eec4f438398ff901c92b05&act=1001&platform=1&reqtype=vast&o=forqd1&e=AAF1E82C6C45D36F10B7990E30C0158C&sectionid=&ctype=5&creative_abtest=0]]></Tracking>
+                  </TrackingEvents>
+                  <VideoClicks>
+                     <ClickThrough/>
+                     <ClickTracking><![CDATA[https://jp.as.pptv.com/ikanstat/click?pos=300001&tid=TA201508011615210028&sid=10020777&cid=&pid=10020777&vchid=0&lid=001&rqip=180931345&rqfreq=&rqtime=1499067424758&vvid=039e698b-9cec-4d91-9c4f-76e552bdb72d&uuid=149906742477398488346&ver=3.6.8.0055&dpid=c1ce1bf588eec4f438398ff901c92b05&platform=1&reqtype=vast&o=forqd1&e=B30ACAE856580F03A86B30AAA93BC45B&sectionid=&ctype=5]]></ClickTracking>
+                  </VideoClicks>
+                  <MediaFiles>
+                     <MediaFile height="420" width="560" delivery="progressive" type="image/jpeg" maintainAspectRatio="true" id="448523">http://asimgs.pplive.cn/imgs/materials/2015/7/23/20150723094204_Luffy.jpg</MediaFile>
+                  </MediaFiles>
+               </Linear>
+            </Creative>
+         </Creatives>
+      </InLine>
+   </Ad>
+</VAST>
