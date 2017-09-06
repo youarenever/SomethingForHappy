@@ -73,4 +73,4 @@ def select_hello(time, status=1):
 
 if __name__ == '__main__':
     db_init()
-    select_hello('09',1)[1][0]
+    print select_hello('09',1)[1][0]
