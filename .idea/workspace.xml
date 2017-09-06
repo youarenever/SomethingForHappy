@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5b0289c7-3f60-4823-9c66-479e5a09c796" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RaspberryPi/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RaspberryPi/com/home/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RaspberryPi/com/home/helloworld.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RaspberryPi/com/operation.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RaspberryPi/Pi.xmind" afterPath="$PROJECT_DIR$/RaspberryPi/Pi.xmind" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RaspberryPi/com/test.db" afterPath="$PROJECT_DIR$/RaspberryPi/com/test.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RaspberryPi/com/db_control/sql.py" afterPath="$PROJECT_DIR$/RaspberryPi/com/db_control/sql.py" />
-    </list>
+    <list default="true" id="5b0289c7-3f60-4823-9c66-479e5a09c796" name="Default" comment="" />
     <ignored path="SomethingForHappy.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -168,7 +159,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="953" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
@@ -715,7 +706,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="953" y="0" width="974" height="1047" extended-state="0" />
+    <frame x="953" y="0" width="974" height="1047" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19519833" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
