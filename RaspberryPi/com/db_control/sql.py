@@ -12,6 +12,7 @@ def db_init():
                "texts VARCHAR(100),"
                "profilesId INTEGER NOT NULL,"
                "status INTEGER,"
+               "weight INTEGER,"
                "CreatedTime TimeStamp NOT NULL DEFAULT (datetime('now','localtime')))")
     cu.execute("CREATE TABLE IF NOT EXISTS jokes ("
                "id INTEGER PRIMARY KEY,"
@@ -44,8 +45,8 @@ def db_init():
         for t in [(u'随时可用', 2, '', '', '', ''), (u'早上使用', 1, '06', '10', '2017-09-06', '2017-09-30')]:
             cu.execute("INSERT INTO helloProfiles(description,status,begintime,endtime,begindate,enddate)"
                        " VALUES(?,?,?,?,?,?)", t)
-        for t in [(u'HELLO WORLD', 1, 1), (u'早上好', 2, 1), (u'一年之计在于晨', 2, 1)]:
-            cu.execute("INSERT INTO hello([texts],[profilesId],[status]) VALUES(?,?,?)", t)
+        for t in [(u'HELLO WORLD', 1, 1,100), (u'早上好', 2, 1,100), (u'一年之计在于晨', 2, 1,100)]:
+            cu.execute("INSERT INTO hello([texts],[profilesId],[status],[weight]) VALUES(?,?,?)", t)
     cu.close()
     db.commit()
     db.close()
