@@ -45,8 +45,8 @@ def db_init():
         for t in [(u'随时可用', 2, '', '', '', ''), (u'早上使用', 1, '06', '10', '2017-09-06', '2017-09-30')]:
             cu.execute("INSERT INTO helloProfiles(description,status,begintime,endtime,begindate,enddate)"
                        " VALUES(?,?,?,?,?,?)", t)
-        for t in [(u'HELLO WORLD', 1, 1,100), (u'早上好', 2, 1,100), (u'一年之计在于晨', 2, 1,100)]:
-            cu.execute("INSERT INTO hello([texts],[profilesId],[status],[weight]) VALUES(?,?,?)", t)
+        for t in [(u'HELLO WORLD', 1, 1,60), (u'HELLO BOSS', 1, 1,60),(u'早上好', 2, 1,100), (u'一年之计在于晨', 2, 1,100)]:
+            cu.execute("INSERT INTO hello([texts],[profilesId],[status],[weight]) VALUES(?,?,?,?)", t)
     cu.close()
     db.commit()
     db.close()
@@ -60,18 +60,27 @@ def select_hello(time, status=1):
         db = sqlite3.connect("./RaspberryPi.db")
         cu = db.cursor()
         if __status == 2:
-            cu.execute("SELECT h.texts FROM hello h LEFT JOIN helloProfiles hp "
+            cu.execute("SELECT h.texts,h.weight,h.id FROM hello h LEFT JOIN helloProfiles hp "
                        "WHERE h.profilesId=hp.id AND hp.status=2;")
             return cu.fetchall()
         else:
-            cu.execute("SELECT h.texts FROM hello h LEFT JOIN helloProfiles hp "
+            cu.execute("SELECT h.texts,h.weight,h.id FROM hello h LEFT JOIN helloProfiles hp "
                        "WHERE h.profilesId=hp.id AND hp.begintime<=? AND hp.endtime>? AND hp.status=1", (__time, __time))
             return cu.fetchall()
     finally:
         cu.close()
         db.close()
 
-
+def reduce_weight(id):
+    __id=id
+    try:
+        db = sqlite3.connect("./RaspberryPi.db")
+        cu = db.cursor()
+        cu.execute("update hello set weight=30 WHERE id=?", (__id))
+    finally:
+        cu.close()
+        db.close()
+        
 if __name__ == '__main__':
     db_init()
     print select_hello('09',1)[1][0]
