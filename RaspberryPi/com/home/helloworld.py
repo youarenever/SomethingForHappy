@@ -15,14 +15,14 @@ class hello_world_main():
         cweek = strftime("%w")
         # print type(cweek)
         # print type(chour)
-        hello_tuple = select_hello(chour, 1)
+        hello_tuple = select_hello(chour, 1)                #按时间条件筛选
         if len(hello_tuple) == 0:
             hello_tuple = select_hello(chour, 2)
         tmp_weight = []
-        for i in range(len(hello_tuple) - 1, -1, -1):
+        for i in range(len(hello_tuple) - 1, -1, -1):       #按星期条件筛选
             if str(hello_tuple[i][3]).find(cweek) < 0:
                 hello_tuple.pop(i)
-        for i in range(len(hello_tuple)):
+        for i in range(len(hello_tuple)):                   #按权重条件筛选
             ran = random.random()
             tmp_weight.append(float(hello_tuple[i][1]) * float(ran))
         # print tmp_weight
