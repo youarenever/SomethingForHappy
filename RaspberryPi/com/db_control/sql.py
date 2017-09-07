@@ -57,7 +57,7 @@ def select_hello(time, status=1):
     __time = time
     __status = status
     try:
-        db = sqlite3.connect("./RaspberryPi.db")
+        db = sqlite3.connect("../db_control/RaspberryPi.db")
         cu = db.cursor()
         if __status == 2:
             cu.execute("SELECT h.texts,h.weight,h.id FROM hello h LEFT JOIN helloProfiles hp "

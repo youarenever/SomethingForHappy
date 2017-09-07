@@ -10,8 +10,10 @@ class hello_world_main():
     def hello(self):
         ##根据时间选择符合的问候语，并筛选权重最大的
         chour = int(strftime("%H"))
+        cweek = strftime("%w")
+        print cweek
         #print type(chour)
-        hello_tuple = select_hello(chour,2)
+        hello_tuple = select_hello(chour,1)
         if len(hello_tuple)==0:
             hello_tuple = select_hello(chour,2)
         tmp_weight= []
