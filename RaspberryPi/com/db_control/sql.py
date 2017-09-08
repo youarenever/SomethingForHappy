@@ -3,13 +3,13 @@
 import sqlite3
 import os
 
-from RaspberryPi.profiles_pi import DB_PATH
+# from RaspberryPi.profiles_pi import DB_PATH
 
+DB_PATH="F:\git\SomethingForHappy\RaspberryPi\com\db_control\RaspberryPi.db"
 
 def db_init():
-    if os.path.exists(DB_PATH):
-        pass
-    else:
+    if not os.path.exists(DB_PATH):
+        os.chdir(os.path.dirname(DB_PATH))
         os.system("sqlite3 ./RaspberryPi.db  < ./initdb.sql")  # bug
         # db = sqlite3.connect("./RaspberryPi.db")
         # cu = db.cursor()
@@ -93,4 +93,3 @@ def reduce_weight(id):
 
 if __name__ == '__main__':
     db_init()
-    reduce_weight(5)

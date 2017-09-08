@@ -25,3 +25,9 @@
 #
 # if __name__ == '__main__':
 #     app.run(port=5001)
+import os
+path="F:\git\SomethingForHappy\RaspberryPi\com\db_control\RaspberryPi.db"
+
+print os.path.dirname(path)
+#os.chdir("F:\\test")
+#os.system("sqlite3 dd.db < initdb.sql")
