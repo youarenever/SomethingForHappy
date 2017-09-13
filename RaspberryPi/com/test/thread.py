@@ -36,7 +36,6 @@ class Bb():
     
 if __name__ == '__main__':
     a=Aa()
-    print "xxxxx"
     b=Aa()
     # for t in threads:
         # t.setDaemon(True)

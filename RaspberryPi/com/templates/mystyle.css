@@ -1,0 +1,11 @@
+#hello
+{
+	text-align:center;
+	color:black;
+    font-family:"΢���ź�",sans-serif;
+}
+#tianqi{
+ display:inline
+ }
+
+ .parent{background:red;height:100px;margin:0 auto;} .left{background:green;margin-right:-100px;width:100%;float:left;} .right{float:right;width:100px;background:blue;}

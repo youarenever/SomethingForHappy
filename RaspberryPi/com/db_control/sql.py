@@ -3,10 +3,9 @@
 import sqlite3
 import os
 
-# from RaspberryPi.profiles_pi import DB_PATH
+from RaspberryPi.profiles_pi import DB_PATH
 
-DB_PATH="F:\git\SomethingForHappy\RaspberryPi\com\db_control\RaspberryPi.db"
-
+##初始化数据库
 def db_init():
     if not os.path.exists(DB_PATH):
         os.chdir(os.path.dirname(DB_PATH))
@@ -65,26 +64,43 @@ def select_hello(time, status=1):
     __status = status
     db = sqlite3.connect(DB_PATH)
     cu = db.cursor()
-    if __status == 2:
-        cu.execute("SELECT h.texts,h.weight,h.id FROM hello h LEFT JOIN helloProfiles hp "
-                   "WHERE h.profilesId=hp.id AND hp.status=2;")
-        resql = cu.fetchall()
-    else:
-        cu.execute("SELECT h.texts,h.weight,h.id,hp.week FROM hello h LEFT JOIN helloProfiles hp "
-                   "WHERE h.profilesId=hp.id AND hp.begintime<=? AND hp.endtime>? AND hp.status=1",
-                   (__time, __time))
-        resql = cu.fetchall()
-    cu.close()
-    db.close()
+    try:
+        if __status == 2:
+            cu.execute("SELECT h.texts,h.weight,h.id FROM hello h LEFT JOIN helloProfiles hp "
+                       "WHERE h.profilesId=hp.id AND hp.status=2;")
+            resql = cu.fetchall()
+        else:
+            cu.execute("SELECT h.texts,h.weight,h.id,hp.week FROM hello h LEFT JOIN helloProfiles hp "
+                       "WHERE h.profilesId=hp.id AND hp.begintime<=? AND hp.endtime>? AND hp.status=1",
+                       (__time, __time))
+            resql = cu.fetchall()
+    finally:
+        cu.close()
+        db.close()
     return resql
 
-
-def reduce_weight(id):
+##降低出现问候语的权重
+def reduce_weight(id, weight):
     __id = int(id)
+    __weight = weight
     try:
         db = sqlite3.connect(DB_PATH)
         cu = db.cursor()
-        cu.execute("UPDATE hello SET weight=20 WHERE id=?", (__id,))
+        cu.execute("UPDATE hello SET weight=? WHERE id=?", (__weight, __id,))
+        db.commit()
+    finally:
+        cu.close()
+        db.close()
+
+##重置权重，每天凌晨job跑
+def reset_weight():
+    try:
+        db = sqlite3.connect(DB_PATH)
+        cu = db.cursor()
+        cu.execute(
+            "UPDATE hello SET weight=(SELECT defaultweight FROM hello WHERE defaultweight='60') WHERE defaultweight='60'")
+        cu.execute(
+            "UPDATE hello SET weight=(SELECT defaultweight FROM hello WHERE defaultweight='100') WHERE defaultweight='100'")
         db.commit()
     finally:
         cu.close()
@@ -93,3 +109,4 @@ def reduce_weight(id):
 
 if __name__ == '__main__':
     db_init()
+    reset_weight()
