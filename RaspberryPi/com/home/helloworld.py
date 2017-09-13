@@ -2,11 +2,14 @@
 from RaspberryPi.com.db_control.sql import select_hello, reduce_weight
 from time import strftime, gmtime
 import random
+
+from RaspberryPi.com.schedule_job.threading_schedule_job import schedule_operation
 from RaspberryPi.profiles_pi import *
 
 
 class hello_world_main():
     def __init__(self):
+        schedule_operation()
         pass
 
     def hello(self):
@@ -29,7 +32,7 @@ class hello_world_main():
         max_weight_index = tmp_weight.index(max(tmp_weight))
         # print tmp_weight
         # print hello_tuple[max_weight_index][0]
-        reduce_weight(hello_tuple[max_weight_index][2])  # 降低已出现的问候语的权重
+        reduce_weight(hello_tuple[max_weight_index][2],20)  # 降低已出现的问候语的权重
         return YOUR_NAME + "," + hello_tuple[max_weight_index][0]
 
     def jokes(self):
@@ -41,4 +44,5 @@ class hello_world_main():
 
 if __name__ == "__main__":
     h = hello_world_main()
+    c = hello_world_main()
     print h.hello()
