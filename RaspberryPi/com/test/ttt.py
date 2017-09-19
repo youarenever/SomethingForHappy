@@ -1,4 +1,4 @@
-#coding=utf-8
+# coding=utf-8
 # from flask import Flask
 # from flask import request
 #
@@ -25,9 +25,14 @@
 #
 # if __name__ == '__main__':
 #     app.run(port=5001)
-import os
-path="F:\git\SomethingForHappy\RaspberryPi\com\db_control\RaspberryPi.db"
+# import os
+# path="F:\git\SomethingForHappy\RaspberryPi\com\db_control\RaspberryPi.db"
+#
+# print os.path.dirname(path)
+# os.chdir("F:\\test")
+# os.system("sqlite3 dd.db < initdb.sql")
+list1 = [1, 3, 4, 5]
+dict = {1: 11, 2: list1}
 
-print os.path.dirname(path)
-#os.chdir("F:\\test")
-#os.system("sqlite3 dd.db < initdb.sql")
+
+print dict[2]

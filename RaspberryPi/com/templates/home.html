@@ -1,9 +1,98 @@
-<html>
+<!-- <html> -->
+<!-- <head> -->
+<!-- </head> -->
+<!-- <body> -->
+    <!-- {% for weather in weathers %} -->
+    <!-- <p>{{ weather }}</p> -->
+  <!-- {% endfor %} -->
+<!-- </body> -->
+<!-- </html> -->
+
+
+<!DOCTYPE html>
+<html lang="en-US">
 <head>
-<!--<link rel="stylesheet" type="text/css" href="mystyle.css" />-->
+<style>
+<!-- .nav { -->
+    <!-- line-height:30px; -->
+    <!-- background-color:#eeeeee; -->
+    <!-- height:300px; -->
+    <!-- width:100px; -->
+    <!-- float:left; -->
+    <!-- padding:5px;  -->
+<!-- } -->
+.city {
+float: right;
+margin: 1px;
+padding: 5px;
+width: 90px;
+height: 200px;
+<!-- border: 1px solid black; -->
+} 
+.city1 {
+float: right;
+margin: 1px;
+padding: 5px;
+width: 100px;
+height: 200px;
+} 
+
+
+.down {
+    clear:both;
+    text-align:center;
+    padding-top:110%; 
+}
+
+
+
+</style>
 </head>
+
 <body>
-<h1 id="hello">{{message}},this is 'your!`</h1>
-<p>{{weathers}}</p>
+<!-- <div class="nav"></div> -->
+<!-- <h1>W3School Demo</h1> -->
+<!-- <h2>Resize this responsive page!</h2> -->
+<!-- <br> -->
+
+
+<div class="city">
+<img src="./111.png" />
+    {% for weather in weathers4 %}
+    <p>{{ weather }}</p>
+  {% endfor %}
+</div>
+<div class="city">
+<img src={{img1}} />
+    {% for weather in weathers3 %}
+    <p>{{ weather }}</p>
+  {% endfor %}
+</div>
+
+<div class="city">
+<img src="./111.png" />
+    {% for weather in weathers2 %}
+    <p>{{ weather }}</p>
+  {% endfor %}
+</div>
+<div class="city">
+<img src="./111.png" />
+    {% for weather in weathers1 %}
+    <p>{{ weather }}</p>
+  {% endfor %}
+</div>
+<div class="city1">
+<img src="./111.png" />
+    {% for weather in weathers0 %}
+    <p>{{ weather }}</p>
+  {% endfor %}
+</div>
+
+<div class="down">
+
+<p>{{ hello }}</p>
+
+</div>
+
 </body>
 </html>
