@@ -16,8 +16,9 @@ def signin():
     weather_message2 = wf.weather_forecast_5days()[2]
     weather_message3 = wf.weather_forecast_5days()[3]
     weather_message4 = wf.weather_forecast_5days()[4]
-    return render_template('home.html', hello=hello_message, weathers0=weather_message0, weathers1=weather_message1,
-                           weathers2=weather_message2, weathers3=weather_message3, weathers4=weather_message4)
+    # return render_template('home.html', hello=hello_message, weathers0=weather_message0, weathers1=weather_message1,
+    #                        weathers2=weather_message2, weathers3=weather_message3, weathers4=weather_message4)
+    return render_template('home.html', **locals())
     # list1=[0,1,2,3,4,6,[3,40]]
 
     # return render_template('test.html',digits=list1[6])
