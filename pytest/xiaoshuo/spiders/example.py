@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
+import re
+
 import scrapy
 from scrapy import Request
-from bs4 import BeautifulSoup
 from xiaoshuo.items import XiaoshuoItem
-
+import time
+from random import random
 
 class ExampleSpider(scrapy.Spider):
     name = 'xiaoshuo'
@@ -31,10 +33,11 @@ class ExampleSpider(scrapy.Spider):
                 picadr = p.xpath('./a/img/@src').extract()
                 name = p.xpath('./text()').extract()
                 if not len(name):
-                    name.append(u"无题")
+                    tim = str(time.strftime('%m%d%M%S')) + str(int(random() * 1000))
+                    name.append(tim)
                 if len(picadr):
                     item['adr'] = picadr[0]
-                    item['name'] = name[0]
+                    item['name'] = re.sub("[\s+\.\!\/_,$%^*(+\"\']+|[+——！，。？、~@#￥%……&*（）]+".decode("utf8"), "".decode("utf8"),name[0])
                     # print picadr[0]
                     # print name[0]
                     yield item
@@ -48,5 +51,5 @@ class ExampleSpider(scrapy.Spider):
                     ####默认回调parse,并加入url_set以便后续去重
                     yield self.make_requests_from_url(url)
                     ExampleSpider.url_set.add(url)
-                    print url
+                    # print url
 
