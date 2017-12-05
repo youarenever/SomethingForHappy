@@ -2,5 +2,6 @@
 
 with open("111.log","r") as f:
     for i in f.readlines():
-        if i.__contains__("")
+        if i.__contains__(""):
+            pass
 
