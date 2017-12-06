@@ -25,6 +25,7 @@ class ExampleSpider(scrapy.Spider):
             temp_fsturl = fsturl[0][:-6]
             yield self.make_requests_from_url(fsturl[0])
             # print temp_fsturl
+
         #####保存当页的图片url和title#####
         if response.url.startswith(temp_fsturl):
             allPics = response.xpath('//div[@class="Mid2L_con"]/p')
@@ -41,7 +42,6 @@ class ExampleSpider(scrapy.Spider):
                     # print picadr[0]
                     # print name[0]
                     yield item
-
 
         ####提取下一页url
         urls = response.xpath('//div[@class="page_css"]/a/@href').extract()
