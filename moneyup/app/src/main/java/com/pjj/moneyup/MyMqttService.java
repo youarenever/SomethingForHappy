@@ -5,18 +5,11 @@ package com.pjj.moneyup;
 
 import android.annotation.SuppressLint;
 import android.app.Service;
-import android.content.Context;
 import android.content.Intent;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.os.Build;
-import android.os.Handler;
+import android.os.Binder;
 import android.os.IBinder;
 //import android.support.annotation.Nullable;
 import android.util.Log;
-import android.widget.Toast;
-
-import androidx.annotation.Nullable;
 
 import org.eclipse.paho.android.service.MqttAndroidClient;
 import org.eclipse.paho.client.mqttv3.IMqttActionListener;
@@ -46,21 +39,40 @@ public class MyMqttService extends Service {
     public static String RESPONSE_TOPIC = "tourist_enter2";//响应主题
     @SuppressLint("MissingPermission")
     public String CLIENTID = "slkdjflsdkjweof";//客户端ID，一般以客户端唯一标识符表示，这里用设备序列号表示
+    public String reMessage = "";//客户端ID，一般以客户端唯一标识符表示，这里用设备序列号表示
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        Log.i(TAG, "onStartCommand方法被调用!");
-        init();
-        Log.i(TAG, "22222222");
         return super.onStartCommand(intent, flags, startId);
     }
 
+    //定义onBinder方法所返回的对象
+    private MyBinder binder = new MyBinder();
 
-    @Nullable
+    public class MyBinder extends Binder {
+        public String getMessage() {
+            return reMessage;
+        }
+
+        public void setMessageNull() {
+            reMessage = "";
+        }
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        Log.i(TAG, "onStartCommand方法被调用!");
+        init();
+        Log.i(TAG, "22222222");
+
+    }
+
+
     @Override
     public IBinder onBind(Intent intent) {
 
-        return null;
+        return binder;
     }
 
     /**
@@ -195,8 +207,9 @@ public class MyMqttService extends Service {
         @Override
         public void messageArrived(String topic, MqttMessage message) throws Exception {
             Log.i(TAG, "收到消息： " + new String(message.getPayload()));
+            reMessage = new String(message.getPayload());
             //收到消息，这里弹出Toast表示。如果需要更新UI，可以使用广播或者EventBus进行发送
-            Toast.makeText(getApplicationContext(), "messageArrived: " + new String(message.getPayload()), Toast.LENGTH_LONG).show();
+//            Toast.makeText(getApplicationContext(), "messageArrived: " + new String(message.getPayload()), Toast.LENGTH_LONG).show();
             //收到其他客户端的消息后，响应给对方告知消息已到达或者消息有问题等
             response("message arrived");
         }

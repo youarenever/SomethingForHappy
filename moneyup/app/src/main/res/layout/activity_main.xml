@@ -30,4 +30,23 @@
         app:layout_constraintRight_toRightOf="parent"
         app:menu="@menu/bottom_nav_menu" />
 
+    <Button
+        android:id="@+id/messa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/message" />
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="284dp"
+        android:layout_height="78dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="37dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/messa" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
