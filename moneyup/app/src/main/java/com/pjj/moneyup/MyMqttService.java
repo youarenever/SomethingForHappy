@@ -4,12 +4,21 @@
 package com.pjj.moneyup;
 
 import android.annotation.SuppressLint;
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.app.Service;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Binder;
+import android.os.Build;
 import android.os.IBinder;
 //import android.support.annotation.Nullable;
 import android.util.Log;
+
+import androidx.annotation.RequiresApi;
+import androidx.core.app.NotificationCompat;
 
 import org.eclipse.paho.android.service.MqttAndroidClient;
 import org.eclipse.paho.client.mqttv3.IMqttActionListener;
@@ -32,14 +41,20 @@ public class MyMqttService extends Service {
     public final String TAG = MyMqttService.class.getSimpleName();
     private static MqttAndroidClient mqttAndroidClient;
     private MqttConnectOptions mMqttConnectOptions;
-    public String HOST = "tcp://172.17.12.170:61613";//服务器地址（协议+地址+端口号）
+    public String HOST = "tcp://192.168.1.9:61613";//服务器地址（协议+地址+端口号）
     public String USERNAME = "admin";//用户名
     public String PASSWORD = "password";//密码
-    public static String PUBLISH_TOPIC = "tourist_enter";//发布主题
-    public static String RESPONSE_TOPIC = "tourist_enter2";//响应主题
+    public static String PUBLISH_TOPIC = "mytopic";//发布主题
+    public static String RESPONSE_TOPIC = "mytopic2";//响应主题
     @SuppressLint("MissingPermission")
-    public String CLIENTID = "slkdjflsdkjweof";//客户端ID，一般以客户端唯一标识符表示，这里用设备序列号表示
-    public String reMessage = "";//客户端ID，一般以客户端唯一标识符表示，这里用设备序列号表示
+    public String CLIENTID = "slkdjflsdkjweof33";//客户端ID，一般以客户端唯一标识符表示，这里用设备序列号表示
+    public String reMessage = "";
+
+    public NotificationManager notificationManager;
+    public Notification notification = null;
+    public String ChanelId = "12";
+    private Bitmap LargeBitmap;
+
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
@@ -59,15 +74,40 @@ public class MyMqttService extends Service {
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onCreate() {
         super.onCreate();
         Log.i(TAG, "onStartCommand方法被调用!");
-        init();
         Log.i(TAG, "22222222");
-
+        String name = "name";
+        notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        NotificationChannel mChannel = new NotificationChannel(ChanelId, name, NotificationManager.IMPORTANCE_LOW);
+        assert notificationManager != null;
+        notificationManager.createNotificationChannel(mChannel);
+        init();
+        Log.i(TAG, "33333");
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    private void notifyMessage(String title, String text) {
+        LargeBitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);
+        notification = new Notification.Builder(this)
+                .setChannelId(ChanelId)
+                .setContentTitle(title)
+                .setContentText(text)
+                .setTicker("收到叶良辰发送过来的信息~")
+                .setSubText("11111111~")
+                .setSmallIcon(R.mipmap.ic_launcher)
+//                .setDefaults(Notification.DEFAULT_ALL)
+                .setWhen(System.currentTimeMillis())
+                .setPriority(Notification.PRIORITY_DEFAULT)
+                .setAutoCancel(true)
+                .setLargeIcon(LargeBitmap)                     //设置大图标
+                .setSmallIcon(R.drawable.ic_launcher_foreground).build();
+        notificationManager.notify((int)(1+Math.random()*100), notification);//把通知显示出来
+//        startForeground(1,notification);//前台通知(会一直显示在通知栏)
+    }
 
     @Override
     public IBinder onBind(Intent intent) {
@@ -82,11 +122,11 @@ public class MyMqttService extends Service {
      */
     public static void publish(String message) {
         String topic = PUBLISH_TOPIC;
-        Integer qos = 2;
-        Boolean retained = false;
+        int qos = 2;
+        boolean retained = false;
         try {
             //参数分别为：主题、消息的字节数组、服务质量、是否在服务器保留断开连接后的最后一条消息
-            mqttAndroidClient.publish(topic, message.getBytes(), qos.intValue(), retained.booleanValue());
+            mqttAndroidClient.publish(topic, message.getBytes(), (int) qos, retained);
         } catch (MqttException e) {
             e.printStackTrace();
         }
@@ -99,11 +139,11 @@ public class MyMqttService extends Service {
      */
     public void response(String message) {
         String topic = RESPONSE_TOPIC;
-        Integer qos = 2;
-        Boolean retained = false;
+        int qos = 2;
+        boolean retained = false;
         try {
             //参数分别为：主题、消息的字节数组、服务质量、是否在服务器保留断开连接后的最后一条消息
-            mqttAndroidClient.publish(topic, message.getBytes(), qos.intValue(), retained.booleanValue());
+            mqttAndroidClient.publish(topic, message.getBytes(), (int) qos, retained);
         } catch (MqttException e) {
             e.printStackTrace();
         }
@@ -117,7 +157,7 @@ public class MyMqttService extends Service {
         mqttAndroidClient = new MqttAndroidClient(this, serverURI, CLIENTID);
         mqttAndroidClient.setCallback(mqttCallback); //设置监听订阅消息的回调
         mMqttConnectOptions = new MqttConnectOptions();
-        mMqttConnectOptions.setCleanSession(true); //设置是否清除缓存
+//        mMqttConnectOptions.setCleanSession(true); //设置是否清除缓存
         mMqttConnectOptions.setConnectionTimeout(10); //设置超时时间，单位：秒
         mMqttConnectOptions.setKeepAliveInterval(10); //设置心跳包发送间隔，单位：秒
         mMqttConnectOptions.setUserName(USERNAME); //设置用户名
@@ -127,12 +167,12 @@ public class MyMqttService extends Service {
         boolean doConnect = true;
         String message = "{\"terminal_uid\":\"" + CLIENTID + "\"}";
         String topic = PUBLISH_TOPIC;
-        Integer qos = 2;
-        Boolean retained = false;
+        int qos = 2;
+        boolean retained = false;
         if ((!message.equals("")) || (!topic.equals(""))) {
             // 最后的遗嘱
             try {
-                mMqttConnectOptions.setWill(topic, message.getBytes(), qos.intValue(), retained.booleanValue());
+                mMqttConnectOptions.setWill(topic, message.getBytes(), (int) qos, retained);
             } catch (Exception e) {
                 Log.i(TAG, "Exception Occured", e);
                 doConnect = false;
@@ -204,10 +244,12 @@ public class MyMqttService extends Service {
     //订阅主题的回调
     private MqttCallback mqttCallback = new MqttCallback() {
 
+        @RequiresApi(api = Build.VERSION_CODES.O)
         @Override
         public void messageArrived(String topic, MqttMessage message) throws Exception {
             Log.i(TAG, "收到消息： " + new String(message.getPayload()));
             reMessage = new String(message.getPayload());
+            notifyMessage("提醒了：", new String(message.getPayload()));
             //收到消息，这里弹出Toast表示。如果需要更新UI，可以使用广播或者EventBus进行发送
 //            Toast.makeText(getApplicationContext(), "messageArrived: " + new String(message.getPayload()), Toast.LENGTH_LONG).show();
             //收到其他客户端的消息后，响应给对方告知消息已到达或者消息有问题等
