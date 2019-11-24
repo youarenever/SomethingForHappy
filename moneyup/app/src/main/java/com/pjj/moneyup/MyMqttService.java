@@ -8,6 +8,7 @@ import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -55,7 +56,6 @@ public class MyMqttService extends Service {
     public String ChanelId = "12";
     private Bitmap LargeBitmap;
 
-
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         return super.onStartCommand(intent, flags, startId);
@@ -85,12 +85,15 @@ public class MyMqttService extends Service {
         NotificationChannel mChannel = new NotificationChannel(ChanelId, name, NotificationManager.IMPORTANCE_LOW);
         assert notificationManager != null;
         notificationManager.createNotificationChannel(mChannel);
+
         init();
         Log.i(TAG, "33333");
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     private void notifyMessage(String title, String text) {
+        //定义一个PendingIntent点击Notification后启动一个Activity
+
         LargeBitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);
         notification = new Notification.Builder(this)
                 .setChannelId(ChanelId)

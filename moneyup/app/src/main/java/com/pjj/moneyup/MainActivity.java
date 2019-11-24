@@ -20,6 +20,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 case R.id.navigation_dashboard:
                     mTextMessage.setText(R.string.title_dashboard);
+                    send_message();
                     return true;
                 case R.id.navigation_notifications:
                     mTextMessage.setText(R.string.title_notifications);
@@ -52,6 +54,14 @@ public class MainActivity extends AppCompatActivity {
             return false;
         }
     };
+
+    public void send_message() {
+        Intent intent = new Intent(this, WebViewActivity.class);
+//        EditText name = (EditText) findViewById(R.id.name);  //还是根据ID找到对象，并进行接下来的操作
+//        String message = name.getText().toString();
+//        intent.putExtra(MESSAGE, "dfkdfldkf");
+        startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +90,6 @@ public class MainActivity extends AppCompatActivity {
                 binder.setMessageNull();
 
 
-
                 mBuilder.setContentTitle("叶良辰")                        //标题
                         .setContentText("我有一百种方法让你呆不下去~")      //内容
                         .setSubText("——记住我叫叶良辰")                    //内容下面的一小段文字
@@ -90,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
                         .setLargeIcon(LargeBitmap)                     //设置大图标
                         .setDefaults(Notification.DEFAULT_LIGHTS | Notification.DEFAULT_VIBRATE)    //设置默认的三色灯与振动器
 //                        .setSound(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.biaobiao))  //设置自定义的提示音
-                        .setAutoCancel(true)  ;                         //设置点击后取消Notification
+                        .setAutoCancel(true);                         //设置点击后取消Notification
 //                        .setContentIntent(pit);                        //设置PendingIntent
                 notify1 = mBuilder.build();
                 mNManager.notify(1, notify1);
