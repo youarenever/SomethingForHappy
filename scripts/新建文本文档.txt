@@ -1,0 +1,275 @@
+# 鼠标事件处理函数
+import threading
+
+import pyWinhook
+import pyautogui
+import pythoncom
+
+PRESS = set()
+
+
+def hook():
+    hm = pyWinhook.HookManager()
+
+    def mouse_event(event):
+        # print("鼠标")
+        # print('MessageName:', event.MessageName)  # 事件名称
+        # print('Message:', event.Message)  # windows消息常量
+        # print('Time:', event.Time)  # 事件发生的时间戳
+        # print('Window:', event.Window)  # 窗口句柄
+        # print('WindowName:', event.WindowName)  # 窗口标题
+        # print('Position:', event.Position)  # 事件发生时相对于整个屏幕的坐标
+        # print('Wheel:', event.Wheel)  # 鼠标滚轮
+        # print('Injected:', event.Injected)  # 判断这个事件是否由程序方式生成，而不是正常的人为触发。
+        # print('---')
+        # 返回True代表将事件继续传给其他句柄，为False则停止传递，即被拦截
+        return True
+
+    # 键盘事件处理函数
+    def keyboard_event(event):
+        print("键盘")
+
+        print('MessageName:', event.MessageName)  # 同上，共同属性不再赘述
+        print('Message:', event.Message)
+        print('Time:', event.Time)
+        # print('Window:', event.Window)
+        # print('WindowName:', event.WindowName)
+        print('Ascii:', event.Ascii, chr(event.Ascii))  # 按键的ASCII码
+        print('Key:', event.Key)  # 按键的名称
+        print('KeyID:', event.KeyID)  # 按键wwdssw的虚拟键值
+        print('ScanCode:', event.ScanCode)  # 按键扫描码
+        # print('Extended:', event.Extended)  # 判断是否为增强键盘的扩展键
+        # print('Injected:', event.Injected)
+        print('Alt', event.Alt)  # 是某同时按下Alt
+        print('Transition', event.Transition)  # 判断转换状态
+        # print('---')
+
+        # 同上
+        return True
+
+    # hm.MouseAllButtons= mouse_event  # 将OnMouseEvent函数绑定到MouseAllButtonsDown事件上
+    # hm.MouseWheel= mouse_event  # 将OnMouseEvent函数绑定到MouseAllButtonsDown事件上
+    hm.KeyAll = keyboard_event  # 将OnKeyboardEvent函数绑定到KeyDown事件上
+
+    # hm.HookMouse()        #设置鼠标钩子
+    hm.HookKeyboard()  # 设置键盘钩子
+
+    pythoncom.PumpMessages(10000)
+
+
+def hotkey(check, ht_type=1, send_str=None, send=None):
+    """
+
+    :param ht_type: 1.send str 。2hot key
+    :param send_str: tpye=1
+    :param check: 判断是否触发，["1",['3',"4"]]，1+3或1+4
+    :param send: 快捷键 type=2
+    :return:
+    """
+    for i in check:
+        if isinstance(i, str):
+            if i not in PRESS:
+                return False
+        else:
+            for j in i:
+                if j in PRESS:
+                    break
+            else:
+                return False
+    if ht_type == 1 and send_str:
+        pyautogui.typewrite(send_str)
+    # else:
+    #     for i in send:
+    #         pyautogui.pressed(i)
+    #     for i in send.reverse():
+    #         pyautogui.release(i)
+    PRESS.clear()
+    return True
+
+
+# def monitor():
+
+#     while 1:
+#         if not PRESS:
+#             continue
+#         if hotkey(check=['caps_lock', ['p', 'P']], ht_type=1, send_str='python', ):
+#             continue
+
+
+#
+t1 = threading.Thread(target=hook)
+t1.start()
+
+# print(pyautogui.KEYBOARD_KEYS)
+
+
+
+import threading
+
+from pynput import keyboard
+from pynput import mouse
+from pynput.keyboard import Key, Controller
+
+PRESS = set()
+
+
+# KEY_RELEASE = set()
+
+
+def my_keybord():
+    def on_press(key):
+        try:
+            try:
+                PRESS.add(key.char)
+                print(key.char)
+            except AttributeError:
+                PRESS.add(key.name)
+                print(key.name)
+        except Exception as e:
+            print("on_press error")
+
+    def on_release(key):
+        try:
+            try:
+                PRESS.remove(key.char)
+            except AttributeError:
+                PRESS.remove(key.name)
+        except Exception as e:
+            print("on_release error")
+
+        # if key == keyboard.Key.esc:
+        #     # 停止监听
+        #     return False11
+
+    # 一直监听键盘事件，直到停止
+    with keyboard.Listener(
+            on_press=on_press,
+            on_release=on_release) as listener:
+        listener.join()
+
+
+def my_mouse():
+    def on_move(x, y):
+        # print(f'鼠标移动到坐标 {(x, y)}')
+        pass
+
+    def on_click(x, y, button, pressed):
+        pass
+        # print(f"{'按下' if pressed else '释放'} ，当前位置是： {(x, y)}")
+        # if not pressed:
+        #     # 停止监听
+        #     return False
+
+    def on_scroll(x, y, dx, dy):
+        # print(f"滑动鼠标， {'向下' if dy < 0 else '向上'} at {(x, y)}")
+        pass
+
+    # 一直监听事件，直到鼠标释放
+    with mouse.Listener(
+            on_move=on_move,
+            on_click=on_click,
+            on_scroll=on_scroll) as listener:
+        listener.join()
+
+
+def hotkey(check, ht_type=1, send_str=None, send=None):
+    """
+
+    :param ht_type: 1.send str 。2hot key
+    :param send_str: tpye=1
+    :param check: 判断是否触发，["1",['3',"4"]]，1+3或1+4
+    :param send: 快捷键 type=2
+    :return:
+    """
+    hky = Controller()
+    for i in check:
+        if isinstance(i, str):
+            if i not in PRESS:
+                return False
+        else:
+            for j in i:
+                if j in PRESS:
+                    break
+            else:
+                return False
+    if ht_type == 1 and send_str:
+        hky.type(send_str)
+    else:
+        for i in send:
+            hky.pressed(i)
+        for i in send.reverse():
+            hky.release(i)
+    PRESS.clear()
+    return True
+
+
+def monitor():
+    """
+        alt = 0
+        alt_l = 0
+        alt_r = 0
+        alt_gr = 0
+        backspace = 0
+        caps_lock = 0
+        cmd = 0
+        cmd_l = 0
+        cmd_r = 0
+        ctrl = 0
+        ctrl_l = 0
+        ctrl_r = 0
+        delete = 0
+        down = 0
+        end = 0
+        enter = 0
+        esc = 0
+        f1 = 0
+        f2 = 0
+        f3 = 0
+        f4 = 0
+        f5 = 0
+        f6 = 0
+        f7 = 0
+        f8 = 0
+        f9 = 0
+        f10 = 0
+        f11 = 0
+        f12 = 0
+        f13 = 0
+        f14 = 0
+        f15 = 0
+        f16 = 0
+        f17 = 0
+        f18 = 0
+        f19 = 0
+        f20 = 0
+        home = 0
+        left = 0
+        page_down = 0
+        page_up = 0
+        right = 0
+        shift = 0
+        shift_l = 0
+        shift_r = 0
+        space = 0
+        tab = 0
+        up = 0
+        insert = 0
+        menu = 0
+        num_lock = 0
+        pause = 0
+        print_screen = 0
+        scroll_lock = 0
+        """
+    while 1:
+        if not PRESS:
+            continue
+        if hotkey(check=['caps_lock', ['p', 'P']], ht_type=1, send_str='python', ):
+            continue
+
+
+t1 = threading.Thread(target=my_keybord)
+t1.start()
+t2 = threading.Thread(target=my_mouse)
+t2.start()
+t2 = threading.Thread(target=monitor)
+t2.start()
