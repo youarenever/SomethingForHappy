@@ -7,6 +7,7 @@ import android.annotation.SuppressLint;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
@@ -21,6 +22,7 @@ import android.util.Log;
 import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
 
+
 import org.eclipse.paho.android.service.MqttAndroidClient;
 import org.eclipse.paho.client.mqttv3.IMqttActionListener;
 import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
@@ -29,6 +31,11 @@ import org.eclipse.paho.client.mqttv3.MqttCallback;
 import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.Arrays;
+import java.util.Random;
 
 /**
  * Author       wildma
@@ -42,19 +49,20 @@ public class MyMqttService extends Service {
     public final String TAG = MyMqttService.class.getSimpleName();
     private static MqttAndroidClient mqttAndroidClient;
     private MqttConnectOptions mMqttConnectOptions;
-    public String HOST = "tcp://192.168.1.9:61613";//服务器地址（协议+地址+端口号）
-    public String USERNAME = "admin";//用户名
-    public String PASSWORD = "password";//密码
-    public static String PUBLISH_TOPIC = "mytopic";//发布主题
-    public static String RESPONSE_TOPIC = "mytopic2";//响应主题
+    public String HOST = "tcp://129.211.0.201:8889";//服务器地址（协议+地址+端口号）
+    public String USERNAME = "mymoneyup";//用户名
+    public String PASSWORD = "1U3rS6Oo8aKU50o";//密码
+    public static String PUBLISH_TOPIC = "moneyup_to";//发布主题
+    public static String RESPONSE_TOPIC = "moneyup_re";//响应主题
     @SuppressLint("MissingPermission")
-    public String CLIENTID = "slkdjflsdkjweof33";//客户端ID，一般以客户端唯一标识符表示，这里用设备序列号表示
+    public String CLIENTID = "mymoneyandroid_01";//客户端ID，一般以客户端唯一标识符表示，这里用设备序列号表示
     public String reMessage = "";
 
     public NotificationManager notificationManager;
     public Notification notification = null;
     public String ChanelId = "12";
-    private Bitmap LargeBitmap;
+//    private Bitmap LargeBitmap;
+    public JSONObject obj;
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
@@ -91,24 +99,46 @@ public class MyMqttService extends Service {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
-    private void notifyMessage(String title, String text) {
-        //定义一个PendingIntent点击Notification后启动一个Activity
+    private void notifyMessage() throws JSONException {
+        Intent mainIntent = new Intent(this, MainActivity.class);
+        PendingIntent mainPendingIntent = PendingIntent.getActivity(this, 0, mainIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-        LargeBitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);
-        notification = new Notification.Builder(this)
+        String text = obj.getString("message");//通过name字段获取其所包含的字符串
+        String title = obj.getString("title");//通过name字段获取其所包含的字符串
+//        LargeBitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.logo);
+//        notification = new Notification.Builder(this)
+//                .setChannelId(ChanelId)
+//                .setContentTitle(title)
+//                .setContentText(text)
+//                .setContentIntent(mainPendingIntent)
+//                .setNumber(5)
+//                .setWhen(System.currentTimeMillis())
+//                .setPriority(Notification.PRIORITY_DEFAULT)
+//                .setAutoCancel(true)
+//                .setSmallIcon(R.mipmap.logo).build();
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "subscribe")
                 .setChannelId(ChanelId)
                 .setContentTitle(title)
                 .setContentText(text)
-                .setTicker("收到叶良辰发送过来的信息~")
-                .setSubText("11111111~")
-                .setSmallIcon(R.mipmap.ic_launcher)
-//                .setDefaults(Notification.DEFAULT_ALL)
+                .setContentIntent(mainPendingIntent)
+                .setNumber(5)
                 .setWhen(System.currentTimeMillis())
                 .setPriority(Notification.PRIORITY_DEFAULT)
                 .setAutoCancel(true)
-                .setLargeIcon(LargeBitmap)                     //设置大图标
-                .setSmallIcon(R.drawable.ic_launcher_foreground).build();
-        notificationManager.notify((int)(1+Math.random()*100), notification);//把通知显示出来
+                .setSmallIcon(R.mipmap.notifi);
+
+        //创建大文本样式
+        NotificationCompat.BigTextStyle bigTextStyle = new NotificationCompat.BigTextStyle();
+        bigTextStyle.setBigContentTitle(title)
+//                .setSummaryText("哈哈哈哈哈")
+                .bigText(text);
+
+        builder.setStyle(bigTextStyle); //设置大文本样式
+        notification = builder.build();
+
+
+        notificationManager.notify((int) (1 + Math.random() * 100), notification);//把通知显示出来
 //        startForeground(1,notification);//前台通知(会一直显示在通知栏)
     }
 
@@ -250,13 +280,28 @@ public class MyMqttService extends Service {
         @RequiresApi(api = Build.VERSION_CODES.O)
         @Override
         public void messageArrived(String topic, MqttMessage message) throws Exception {
-            Log.i(TAG, "收到消息： " + new String(message.getPayload()));
             reMessage = new String(message.getPayload());
-            notifyMessage("提醒了：", new String(message.getPayload()));
+            Log.i(TAG, "收到消息： " + reMessage);
+//            Gson gson = new Gson();
+//            jsonArray = gson.toJson(strings, String[].class);
+
+//            String reMessage = "{\"msg_id\": \"191128175542989\", \"message\": \"工商银行 最新价格 5.84 ，比初始价格 5.507  上涨了 6.05 %\", \"updown\": \"up\", \"type\": \"price_change\"}";
+//            JSONObject obj = null;
+            obj = new JSONObject(reMessage);
+            try {
+//              JSONObject user = obj.getJSONObject("user");//通过user字段获取其所包含的JSONObject对象
+                String msg_id = obj.getString("msg_id");//通过name字段获取其所包含的字符串
+//              System.out.println(name);
+                String response_msg = "{\"msg_id\":\"" + msg_id + "\"}";
+                response(response_msg);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            notifyMessage();
             //收到消息，这里弹出Toast表示。如果需要更新UI，可以使用广播或者EventBus进行发送
 //            Toast.makeText(getApplicationContext(), "messageArrived: " + new String(message.getPayload()), Toast.LENGTH_LONG).show();
             //收到其他客户端的消息后，响应给对方告知消息已到达或者消息有问题等
-            response("message arrived");
         }
 
         @Override
